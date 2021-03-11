@@ -1,0 +1,131 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator
+
+# I keep 2 color schema (dark and light) and change between them quite a lot.
+# Colors (One Light) https://github.com/alacritty/alacritty/wiki/Color-schemes#one
+colors:
+  # Default colors
+  # primary:
+  #   foreground: '#282c34'
+  #   background: '#ffffff'
+
+  # Normal colors
+  normal:
+    black:   '#282c34'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#abb2bf'
+
+  # Bright colors
+  # bright:
+  #   black:   '#5c6370'
+  #   red:     '#e06c75'
+  #   green:   '#98c379'
+  #   yellow:  '#d19a66'
+  #   blue:    '#61afef'
+  #   magenta: '#c678dd'
+  #   cyan:    '#56b6c2'
+  #   white:   '#ffffff'
+
+# environment variables
+env:
+  TERM: xterm-256color
+  LANG: en_US.UTF-8
+  LC_ALL: en_US.UTF-8
+  LC_CTYPE: en_US.UTF-8
+
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels. If both are zero this
+  # setting is ignored.
+  dimensions:
+    columns: 300
+    lines: 100
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is not scaled by
+  # DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 0
+    y: 0
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window decorations
+  #
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+  decorations: full
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: SimpleFullscreen
+
+scrolling:
+  # maximum number of lines in the scrollback buffer. Specifying '0' will
+  # disable scrolling.
+  history: 5000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 10
+
+# Font configuration (changes require restart)
+font:
+  # The normal (roman) font face to use.
+  # Style can be specified to pick a specific face.
+  normal:
+    family: "Fira Code"
+
+  # The bold font face
+  bold:
+    family: "Fira Code"
+
+  # The italic font face
+  italic:
+    family: "Fira Code"
+
+  # Point size of the font
+  size: 15.0
+
+  use_thin_strokes: true
+
+# Background opacity
+background_opacity: 1.0
+
+cursor:
+  # Cursor style
+  #
+  # Values for 'style':
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Block
+
+# Shell
+#
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
+shell:
+  program: /usr/local/bin/fish
+
+key_bindings:
+  # Configure Alt+b to jump backwards and Alt+f to jump forward
+  - { key: B,        mods: Alt,     chars: "\x1bb"                       }
+  - { key: F,        mods: Alt,     chars: "\x1bf"                       }
